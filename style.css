@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 1rem;
+}
+
+form{
+    margin: 3rem 1rem;
+
+    max-width: 70vw;
+}
+
+form legend{
+    margin-bottom: 1rem;
+
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.display-none{
+    display: none;
+}
+
+.form-row{
+    margin: .5rem;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-row label{
+    display: flex;
+    flex-direction: column;
+    min-width: 40%;
+}
+
+.form-row label[for="form-read-yes"],
+.form-row label[for="form-read-no"]{
+    display: flex;
+    flex-direction: row;
+    min-width: 40%;
+}
+
+input[id^="form-read-"]{
+    margin-left: 2rem;
+}
+
+#output-library{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
