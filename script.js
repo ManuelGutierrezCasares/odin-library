@@ -1,18 +1,35 @@
 let myLibrary = [];
-let id = 0;
 
 
-function Book(title, author, pages, year, read, id){
-    this.title = title,
-    this.author = author,
-    this.pages = pages,
-    this.year = year,
-    this.read = read,
-    this.id = id
+
+class Book {
+
+    static id = 0;
+
+    constructor(title, author, pages, year, read){
+        this.title = title,
+        this.author = author,
+        this.pages = pages,
+        this.year = year,
+        this.read = read,
+        // Using static id to set autoincremental ID on each instance of object
+        this.constructor.id++
+        this.id = this.constructor.id
+    }
+
 }
 
+// function Book(title, author, pages, year, read, id){
+//     this.title = title,
+//     this.author = author,
+//     this.pages = pages,
+//     this.year = year,
+//     this.read = read,
+//     this.id = id
+// }
+
 function addBookToLibrary(title,author,pages,year,read){
-    return myLibrary.push(new Book(title,author,pages,year,read,id++));
+    return myLibrary.push(new Book(title,author,pages,year,read));
 }
 
 
