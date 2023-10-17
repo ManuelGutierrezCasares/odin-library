@@ -6,15 +6,21 @@ class Book {
 
     static id = 0;
 
+    //Add static method to increment static property id    
+    static autoIncrementId(){
+        return Book.id++;
+    }
+
     constructor(title, author, pages, year, read){
         this.title = title,
         this.author = author,
         this.pages = pages,
         this.year = year,
         this.read = read,
-        // Using static id to set autoincremental ID on each instance of object
-        this.constructor.id++
+        // Using static id on each instance of object
+        Book.autoIncrementId();
         this.id = this.constructor.id
+        // this.constructor.id === Book.id TRUE
     }
 
 }
