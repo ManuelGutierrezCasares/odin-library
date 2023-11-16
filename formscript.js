@@ -22,9 +22,39 @@ function toggleDisplay(){
 submitBookButton.addEventListener("click",addBook);
 
 function addBook(e){
-    e.preventDefault();
-    readYes.checked ? addBookToLibrary(title.value,author.value,pages.value,year.value,true) : addBookToLibrary(title.value,author.value,pages.value,year.value,false);
-    updateDisplay();
+    if (validateTitle(title) && validateAuthor(author) && validatePages(pages) && validateYear(year)){
+        e.preventDefault();
+        readYes.checked ? addBookToLibrary(title.value,author.value,pages.value,year.value,true) : addBookToLibrary(title.value,author.value,pages.value,year.value,false);
+        updateDisplay();
+    }   
+}
+
+function validateTitle (title){
+    if (title.validity.tooShort || title.validity.valueMissing){
+        return false;
+    }
+    return true;    
+}
+
+function validateAuthor (author){
+    if (author.validity.tooShort || author.validity.valueMissing){
+        return false;
+    }
+    return true;    
+}
+
+function validatePages (pages){
+    if (pages.validity.valueMissing){
+        return false;
+    }
+    return true;    
+}
+
+function validateYear (year){
+    if (year.validity.rangeOverflow || year.validity.valueMissing){
+        return false;
+    }
+    return true;
 }
 
 

@@ -20,4 +20,6 @@ Requirements:
 - Internet browser with JavaScript Engine.
 
 Information:
-Validations and aesthetics are not yet done.
+- Validation through JavaScript Validation API.
+
+Aesthetics are not yet done.

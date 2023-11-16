@@ -18,12 +18,12 @@
         <div class="form-row">
             <label for="form-title">
                 Title
-                <input type="text" id="form-title" name="form-title">
+                <input type="text" id="form-title" name="form-title" minlength="3" maxlength="30" autocomplete="off" required>
             </label>
             
             <label for="form-author">
                 Author
-                <input type="text" id="form-author" name="form-author">
+                <input type="text" id="form-author" name="form-author" minlength="3" maxlength="30" autocomplete="off" required>
             </label>
             
         </div>
@@ -31,11 +31,11 @@
         <div class="form-row">
             <label for="form-pages">
                 Number of Pages
-                <input type="text" id="form-pages" name="form-pages">
+                <input type="number" id="form-pages" name="form-pages" autocomplete="off" required>
             </label>
             <label for="form-year">
                 Year published
-                <input type="text" id="form-year" name="form-year">
+                <input type="number" id="form-year" name="form-year" autocomplete="off" max="2024" required>
             </label>
         </div>
 
